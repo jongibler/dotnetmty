@@ -7,6 +7,8 @@
     "start-cors": "func start --cors *",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "mongoose": "^5.12.4"
+  },
   "devDependencies": {}
 }

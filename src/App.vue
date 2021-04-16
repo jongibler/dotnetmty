@@ -1,22 +1,29 @@
 <template>
-  <div>{{textFromApi}}</div>
+  <div>
+     <ol>
+        <li v-for="message in messages" :key="message._id">
+          {{message.text}}
+        </li>
+    </ol>
+  </div>
 </template>
 
 <script>
+
 export default {
   name: "App",
   data() {
 
-
     return {
-      textFromApi: ''
+
+      messages: []
+      
     };
     
   },
   async mounted() {
     
-    let response = await( await fetch(getApiUrl() + 'welcome')).json();
-    this.textFromApi = response.text;
+    this.messages = await( await fetch(getApiUrl() + 'messages')).json();
 
   }
 };
